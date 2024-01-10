@@ -786,7 +786,10 @@ body{
 }
 .about--banner{
     position:relative;
-    height:475px}
+    height:475px;
+   
+    
+}
 .about--banner::before{
     content:"";
     position:absolute;
@@ -837,7 +840,8 @@ body{
     color:#fff;
     font-weight:700;
     text-transform:uppercase;
-    background-color:transparent}
+    background-color:transparent;
+    z-index: 2;}
 .about--banner a:hover svg{
     left:10px}
 .about--banner a svg{
@@ -850,7 +854,15 @@ body{
 .about--banner img{
     position:absolute;
     bottom:-90px;
-    right:-12px}
+    right:-380px;
+    }
+.about--banner p{
+    max-width: 45rem;
+    z-index: 3 ;
+}
+
+
+
 /* .about--options{
     display:-webkit-box;
     display:-webkit-flex;
@@ -938,7 +950,7 @@ body{
     left:0;
     width:100%;
     height:100%;
-    /*aqui*/background-image:url("../img/hero.png");
+    /*aqui*/background-image:url("../img/noskonvida.png");
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat}
