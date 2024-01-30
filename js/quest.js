@@ -9,7 +9,7 @@ const perguntas = [
   let indicePergunta = 0;
   
   const questionForm = document.getElementById('questionForm');
-  const resultadoDiv = document.getElementById('resultado');
+  const resultadoDiv = document.getElementById('respostas');
   const questionContainer = document.getElementById('questionContainer');
   
   // Função para exibir a próxima pergunta

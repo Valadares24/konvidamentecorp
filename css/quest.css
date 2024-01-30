@@ -1,3 +1,23 @@
+
+@font-face{
+    font-family:'Montserrat';
+    src:url("fonts/Montserrat-Black.eot");
+    src:local("☺"),url("fonts/Montserrat-Black.woff") format("woff"),url("fonts/Montserrat-Black.ttf") format("truetype"),url("fonts/Montserrat-Black.svg") format("svg");
+    font-weight:900;
+    font-style:normal}
+@font-face{
+    font-family:'Montserrat';
+    src:url("fonts/Montserrat-Bold.eot");
+    src:local("☺"),url("fonts/Montserrat-Bold.woff") format("woff"),url("fonts/Montserrat-Bold.ttf") format("truetype"),url("fonts/Montserrat-Bold.svg") format("svg");
+    font-weight:700;
+    font-style:normal}
+@font-face{
+    font-family:'Montserrat';
+    src:url("fonts/Montserrat-Regular.eot");
+    src:local("☺"),url("fonts/Montserrat-Regular.woff") format("woff"),url("fonts/Montserrat-Regular.ttf") format("truetype"),url("fonts/Montserrat-Regular.svg") format("svg");
+    font-weight:400;
+    font-style:normal}
+
 @font-face{
     font-family:'Montserrat';
     src:url("fonts/Montserrat-Light.eot");
@@ -5,6 +25,7 @@
     font-weight:300;
     font-style:normal;
 }
+
 
 body{
     background-color: black;
@@ -14,13 +35,82 @@ body{
     align-items: center;
     justify-content: center;
     font-family: Montserrat;
+    place-content: center;
+    flex-wrap: wrap;
+
 }
 
 .card{
-    background-color: #fc4b08;
     border-radius: 15px;
-    width: 500px;
+    border: 2px solid white;
+    width: 600px;
     margin-top: 05%;
     height: 500px;
-    
+}
+
+.card h1{
+    font-weight: 900;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+.card h1 ::after{
+
+}
+
+div#questionContainer{
+    height: 250px;
+    box-sizing: content-box;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    font-weight: 500;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 30px;
+    margin:0 2rem
+}
+
+.respostas{
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+label{
+    color: white;
+    border: 5px 10px;
+    font-size: 3rem;
+    padding:5px 15px;
+    border-radius: 5px;
+    border: 2px solid white;
+    width: 4rem;
+    cursor: pointer;
+    margin: 0 1rem;
+}
+input[type="radio"]{
+    display: none;
+}
+input[type="radio"]:checked + label{
+    color: orangered;
+    background-color: white;
+}   
+
+
+.botoes{
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    height: 5rem;
+}
+
+button{
+    margin: 0 5rem;
+    height: 3rem;
+    width: 7rem;
+    border: 2px solid black ;
+    background-color: orangered;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
 }

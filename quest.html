@@ -4,25 +4,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Questionário</title>
-<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="css/quest.css">
 </head>
 <body>
 
 <div class="card"><!--card de fundo do form-->
-    <h1>Questionário</h1>
+    <h1>Questionário diagnóstico</h1>
 
         <form id="questionForm">
         <div id="questionContainer">
             <!-- O conteúdo será preenchido dinamicamente com JavaScript -->
         </div>
-        <p>teste</p>
-        <button type="submit">Enviar</button>
-        </form>
-</div>
-<div id="resultado"></div>
+        <div class="respostas"><!--inputs visuais e que receberao as respostas-->
 
-<script src="script.js"></script>
+            <input type="radio" name="cola" id="resposta0" onclick="armazenarResposta(this)">
+            <label for="resposta0">0</label>
+            
+            <input type="radio" name="cola" id="resposta1" onclick="armazenarResposta(this)">
+            <label for="resposta1">1</label>
+            
+            <input type="radio" name="cola" id="resposta2" onclick="armazenarResposta(this)">
+            <label for="resposta2">2</label>
+
+            <input type="radio" name="cola" id="resposta3" onclick="armazenarResposta(this)">
+            <label for="resposta3">3</label>
+
+        </div>
+
+        </form>
+
+        <section class="botoes"><!--botoes de avancar e voltar as questoes-->
+        
+            <button id="back" type="button" onclick="voltarParaPerguntaAnterior()">Voltar</button>
+            <button id="next" type="button" onclick="avancarParaProximaPergunta()">Avançar </button>
+        </section>
+
+</div>
+<div id="resultado"></div><!--resultado final baseado nas respostas-->
+
+<script src="js/test.js"></script>
 
 </body>
 </html>
