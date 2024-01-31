@@ -249,6 +249,7 @@ const perguntas = [
 ];
 
 let indicePerguntaAtual = 0; // Variável para controlar o índice da pergunta atual
+let todasRespostas = [];//array que vai armazenar todas as respostas\\
 
 // Função para exibir a pergunta atual na página HTML
 function exibirPerguntaAtual() {
@@ -266,15 +267,44 @@ window.onload = exibirPerguntaAtual;
 
 // Função para avançar para a próxima pergunta
 function avancarParaProximaPergunta() {
-  indicePerguntaAtual++; // Incrementa o índice da pergunta atual
-  if (indicePerguntaAtual < perguntas.length) {
-    exibirPerguntaAtual(); // Exibe a próxima pergunta
-  } else {
-    alert('Você respondeu todas as perguntas.'); // Exibe um alerta quando todas as perguntas foram respondidas
-  }
+  const inputElement0 = document.getElementById("resposta0");
+  const inputElement1 = document.getElementById("resposta1");
+  const inputElement2 = document.getElementById("resposta2");
+  const inputElement3 = document.getElementById("resposta3");
+
+  // Obter os valores dos inputs e convertê-los para números inteiros
+  const valorInteiro0 = parseInt(inputElement0.value);
+  const valorInteiro1 = parseInt(inputElement1.value);
+  const valorInteiro2 = parseInt(inputElement2.value);
+  const valorInteiro3 = parseInt(inputElement3.value);
+  //jogando no console
+  console.log("Resposta 0:", valorInteiro0);
+  console.log("Resposta 1:", valorInteiro1);
+  console.log("Resposta 2:", valorInteiro2);
+  console.log("Resposta 3:", valorInteiro3);
+  
+  // Função para armazenar a resposta selecionada pelo usuário
+  function armazenarResposta(input) {
+    const resposta = parseInt(input.value); // Obtém e converte o valor do input selecionado para um número inteiro
+    
+    // Adiciona a resposta atual ao array todasRespostas
+    todasRespostas.push(resposta);
+    
+    console.log("Respostas armazenadas:", todasRespostas);
 }
 
-// Função para voltar para a pergunta anterior (opcional)
+  // Avançar para a próxima pergunta
+  indicePerguntaAtual++; // Incrementa o índice da pergunta atual
+  if (indicePerguntaAtual < perguntas.length) {
+      exibirPerguntaAtual(); // Exibe a próxima pergunta
+  } else {
+      alert('Você respondeu todas as perguntas.'); // Exibe um alerta quando todas as perguntas foram respondidas
+      // Se todas as perguntas foram respondidas, realizar a operação com as respostas
+      const mediaRespostas = calcularMedia(todasRespostas);
+      console.log("Média das respostas:", mediaRespostas);
+      // Você pode realizar qualquer operação desejada com as respostas aqui
+  }
+}  
 function voltarParaPerguntaAnterior() {
   if (indicePerguntaAtual > 0) {
     indicePerguntaAtual--; // Decrementa o índice da pergunta atual
@@ -283,12 +313,3 @@ function voltarParaPerguntaAnterior() {
     alert('Esta é a primeira pergunta.'); // Exibe um alerta se já estiver na primeira pergunta
   }
 }
-
-const inputElement0 = document.getElementById("resposta0");
-const inputElement1= document.getElementById("resposta1");
-const inputElement2 = document.getElementById("resposta2");
-const inputElement3 = document.getElementById("resposta3");
-const valorInteiro0 = parseInt(inputElement0.value);
-const valorInteiro1 = parseInt(inputElement1.value);
-const valorInteiro2 = parseInt(inputElement2.value);
-const valorInteiro3 = parseInt(inputElement3.value);
