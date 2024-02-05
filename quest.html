@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Questionário</title>
 <link rel="stylesheet" href="css/quest.css">
+
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!--script importar chart cdn-->
 
 <div class="card"><!--card de fundo do form-->
     <h1>Questionário diagnóstico</h1>
@@ -16,6 +18,18 @@
             <!-- O conteúdo será preenchido dinamicamente com JavaScript -->
         </div>
         
+<script>
+     // Função para armazenar a resposta selecionada pelo usuário
+  function armazenarResposta(input) {
+    const resposta = parseInt(input.value); // Obtém e converte o valor do input selecionado para um número inteiro
+    
+    // Adiciona a resposta atual ao array todasRespostas
+    todasRespostas.push(resposta);
+    
+    console.log("Respostas armazenadas:", todasRespostas);
+}
+</script>
+
         <div class="respostas"><!--inputs visuais e que receberao as respostas-->
 
            <input type="radio" name="cola" id="resposta0" value ="0" onclick="armazenarResposta(this)">
@@ -27,7 +41,7 @@
             <input type="radio" name="cola" id="resposta2" value ="2" onclick="armazenarResposta(this)">
             <label for="resposta2">2</label>
 
-            <input type="radio" name="cola" id="resposta3" value ="3 "onclick="armazenarResposta(this)">
+            <input type="radio" name="cola" id="resposta3" value ="3"onclick="armazenarResposta(this)">
             <label for="resposta3">3</label>
 
         </div>
@@ -41,9 +55,12 @@
         </section>
 
 </div>
-<div id="resultado"></div><!--resultado final baseado nas respostas-->
+<div id="resultado">
+    <button type="button" id="pgResultado" onclick="resultados()">Gerar meu resultado</button>
+</div><!--resultado final baseado nas respostas-->
 
 <script src="js/test.js"></script>
+<script src="js/chart.js"></script>
 
 </body>
 </html>

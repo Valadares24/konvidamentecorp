@@ -283,16 +283,6 @@ function avancarParaProximaPergunta() {
   console.log("Resposta 2:", valorInteiro2);
   console.log("Resposta 3:", valorInteiro3);
   
-  // Função para armazenar a resposta selecionada pelo usuário
-  function armazenarResposta(input) {
-    const resposta = parseInt(input.value); // Obtém e converte o valor do input selecionado para um número inteiro
-    
-    // Adiciona a resposta atual ao array todasRespostas
-    todasRespostas.push(resposta);
-    
-    console.log("Respostas armazenadas:", todasRespostas);
-}
-
   // Avançar para a próxima pergunta
   indicePerguntaAtual++; // Incrementa o índice da pergunta atual
   if (indicePerguntaAtual < perguntas.length) {
@@ -300,8 +290,7 @@ function avancarParaProximaPergunta() {
   } else {
       alert('Você respondeu todas as perguntas.'); // Exibe um alerta quando todas as perguntas foram respondidas
       // Se todas as perguntas foram respondidas, realizar a operação com as respostas
-      const mediaRespostas = calcularMedia(todasRespostas);
-      console.log("Média das respostas:", mediaRespostas);
+     
       // Você pode realizar qualquer operação desejada com as respostas aqui
   }
 }  
@@ -313,3 +302,150 @@ function voltarParaPerguntaAnterior() {
     alert('Esta é a primeira pergunta.'); // Exibe um alerta se já estiver na primeira pergunta
   }
 }
+//variuaveis do primeiro grafico - respiraçao
+var numResp = todasRespostas[5] + todasRespostas[6] + todasRespostas[8];//coeficiente total de respiraçao
+var indicaResp, respiraGrafico;//declarando o numero que vai no indicador de respiracao e o que vai pro grafico
+var respiracao = numResp;//respracao vai pro indicador, e o num resp é o numero obtido nos inputs
+
+if (respiracao <= 2 ) {//mesmo outupt da proxima condicao
+  indicaResp = "Respiração em equilibrio";//o indicar de texto
+  respiraGrafico = numResp;
+}// o grafico vai receber o ponto numerico que veio dos inputs
+  else if (2< respiracao <=6) {//redundante, como isso aqui fica na real?
+    indicaResp = "Respiração em desajuste";
+  respiraGrafico = numResp;
+  console.log("Bloco 2: Respiração em desajuste"); // Adicionando console.log() no segundo bloco
+
+  }
+  else if (respiracao >= 7) {
+    indicaResp = "Respiração em hiperdesajuste";//condicional que muda
+    respiraGrafico = numResp;
+    console.log("Bloco 3: Respiração em hiperdesajuste"); // Adicionando console.log() no terceiro bloco
+
+  }
+console.log(indicaResp, respiraGrafico)//excrever no console pra teste
+
+
+//variavel hidratacao
+
+var numHidrat = todasRespostas[10] + todasRespostas[13] + todasRespostas[16];//coeficiente total de hidrataçao
+var indicaHidrat, HidratGrafico;//declarando o numero que vai no indicador de hidrataçao e o que vai pro grafico
+var hidratacao = numHidrat;//hidrataçao vai pro indicador, e o numHirat é o numero obtido nos inputs
+//condicional 
+if (hidratacao <= 2){
+  indicaHidrat = "Hidratação em equilíibrio] ";
+  HidratGrafico = numHidrat;
+}
+
+else if (hidratacao >= 7){
+  indicaHidrat = "Hidratação em hiperdesajuste";
+  HidratGrafico= numHidrat;
+}
+else{//condicional correta permite 3 intervalos
+  indicaHidrat = "Hidratação em desajuste";
+  HidratGrafico= numHidrat;
+}
+console.log(indicaHidrat, HidratGrafico);
+
+//variavel alimentacao
+
+var numAlimento = todasRespostas[21] + todasRespostas[22] + todasRespostas[26];//coeficiente total de alimentacao
+var indicaAlimento, alimentoGrafico;//declarando o numero que vai no indicador de alimentacao e o que vai pro grafico
+var alimentacao = numAlimento;//alimentacao vai pro indicador, e o numAlimento é o numero obtido nos inputs
+//condicional 
+if (alimentacao <= 2){
+  indicaAlimento = "Alimentação em equilíibrio] ";
+  alimentoGrafico = numAlimento;
+}
+else if (alimentacao >= 7){
+  indicaAlimento = "Alimentação em hiperdesajuste";
+  alimentoGrafico= numAlimento;
+}
+else{//condicional correta permite 3 intervalos
+  indicaAlimento = "Alimentação em desajuste";
+  alimentoGrafico= numAlimento;
+}
+console.log(indicaAlimento, alimentoGrafico);
+
+//variavel alimentacao
+
+var numSexo = todasRespostas[27] + todasRespostas[28] + todasRespostas[31];//coeficiente total 
+var indicaSexo, sexoGrafico;//declarando o numero que vai no indicador que vai pro grafico
+var sexo = numSexo;// vai pro indicador, e o numAlimento é o numero obtido nos inputs
+//condicional 
+if (sexo <= 2){
+  indicaSexo = "Sexualidade em equilíibrio] ";
+  sexoGrafico = numSexo;
+}
+
+else if (sexo >= 7){
+  indicaSexo = "Sexualidade em hiperdesajuste";
+  sexoGrafico= numSexo;
+}
+else {//condicional correta permite 3 intervalos
+  indicaSexo = "Sexualidade em desajeste";
+  sexoGrafico = numSexo;
+}
+console.log(indicaSexo, numSexo);
+
+//variavel sono
+
+var numSono = todasRespostas[37] + todasRespostas[38] + todasRespostas[42];//coeficiente total 
+var indicaSono, sonoGrafico;//declarando o numero que vai no indicador que vai pro grafico
+var sono = numSono;// vai pro indicador, e o numAlimento é o numero obtido nos inputs
+//condicional 
+if (sono <= 2){
+  indicaSono = "Sono em equilíibrio] ";
+  sonoGrafico = numSono;
+}
+
+else if (sono >= 7){
+  indicaSono = "Sono em hiperdesajuste";
+  sonoGrafico= numSono;
+}
+else {//condicional correta permite 3 intervalos
+  indicaSono = "Sono em desajuste";
+  sonoGrafico = numSono;
+}
+console.log(indicaSono, numSono);
+
+//variavel dejetos
+
+var numDejetos = todasRespostas[44] + todasRespostas[45] + todasRespostas[48];//coeficiente total 
+var indicaDejeto, dejetoGrafico;//declarando o numero que vai no indicador que vai pro grafico
+var dejeto = numDejetos;// vai pro indicador, e o numAlimento é o numero obtido nos inputs
+//condicional 
+if (sono <= 2){
+  indicaDejeto = "Excreção em equilíibrio] ";
+  dejetoGrafico = numDejetos;
+}
+
+else if (sono >= 7){
+  indicaDejeto = "Excreção em hiperdesajuste";
+  dejetoGrafico= numDejetos;
+}
+else {//condicional correta permite 3 intervalos
+  indicaDejeto = "Excreção em desajuste";
+  dejetoGrafico = numDejetos;
+}
+console.log(indicaDejeto, numDejetos);
+
+//variavel corpo
+var numCorpo = todasRespostas[54] + todasRespostas[55] + todasRespostas[58];//coeficiente total 
+var indicaCorpo, corpoGrafico;//declarando o numero que vai no indicador que vai pro grafico
+var corpo = numCorpo;// vai pro indicador, e o numAlimento é o numero obtido nos inputs
+//condicional 
+if (sono <= 2){
+  indicaCorpo = "Corpo em equilíibrio] ";
+  corpoGrafico = numCorpo;
+}
+
+else if (sono >= 7){
+  indicaCorpo = "Corpo em hiperdesajuste";
+  corpoGrafico= numCorpo;
+}
+else {//condicional correta permite 3 intervalos
+  indicaCorpo = "Corpo em desajuste";
+  corpoGrafico = numCorpo;
+}
+console.log(indicaCorpo, numCorpo);
