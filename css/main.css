@@ -791,7 +791,6 @@ body{
     position:relative;
     height:475px;
    
-    
 }
 .about--banner::before{
     content:"";
@@ -935,7 +934,7 @@ body{
     left:310px}
 .about--banner h2{
     margin-top:0;
-    font-size:50px}
+    font-size:1.8em}
 .about--banner h2::before{
     top:43px;
     left:214px}
@@ -1226,11 +1225,14 @@ body{
 
 @media (max-width: 450px){
     .l-section .hire h2{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .work-request--options label{
     width:120px;
+    height: 8em;
     margin-bottom:10px;
+    line-height: 2.5em;
+    justify-content: center;
     font-size:10px}
 .work-request--options input[type="checkbox"]:checked+label svg{
     width:20px}
@@ -1364,6 +1366,3 @@ body{
     -webkit-transition-delay:.16s;
     transition-delay:.16s}
 
-body{
-    color: red;
-}
