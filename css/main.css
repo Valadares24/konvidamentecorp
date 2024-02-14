@@ -1224,6 +1224,22 @@ body{
     font-size:24px}
 }
 
+@media (max-width: 450px){
+    .l-section .hire h2{
+        font-size: 1.5rem;
+    }
+    .work-request--options label{
+    width:120px;
+    margin-bottom:10px;
+    font-size:10px}
+.work-request--options input[type="checkbox"]:checked+label svg{
+    width:20px}
+.work-request--information{
+    margin: bottom 15px}
+.work-request--information .information-name,.work-request--information .information-email{
+    height:30px;
+    font-size:20px}
+}
 #ctafinal a{
     text-decoration: none;
 }
