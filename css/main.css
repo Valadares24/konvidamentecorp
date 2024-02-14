@@ -1091,7 +1091,7 @@ body{
     -webkit-align-items:center;
     -ms-flex-align:center;
     align-items:center;
-    margin:30px 0}
+    margin:10px 0}
 .work-request--options .options-a{
     display:-webkit-box;
     display:-webkit-flex;
@@ -1235,11 +1235,12 @@ body{
 .work-request--options input[type="checkbox"]:checked+label svg{
     width:20px}
 .work-request--information{
-    margin: bottom 15px}
+    margin: bottom 10px}
 .work-request--information .information-name,.work-request--information .information-email{
     height:30px;
     font-size:20px}
 }
+/*novo media querie acima*/
 #ctafinal a{
     text-decoration: none;
 }
@@ -1363,3 +1364,6 @@ body{
     -webkit-transition-delay:.16s;
     transition-delay:.16s}
 
+body{
+    color: red;
+}
